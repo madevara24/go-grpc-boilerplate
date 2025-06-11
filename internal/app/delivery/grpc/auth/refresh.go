@@ -6,7 +6,7 @@ import (
 	authpb "go-grpc-boilerplate/proto/auth"
 )
 
-func (s *AuthServer) Refresh(ctx context.Context, in *authpb.RefreshRequest) (*authpb.TokenResponse, error) {
+func (s *AuthHandler) Refresh(ctx context.Context, in *authpb.RefreshRequest) (*authpb.TokenResponse, error) {
 	req := refresh.InportRequest{
 		RefreshToken: in.RefreshToken,
 	}

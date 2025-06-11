@@ -6,7 +6,7 @@ import (
 	authpb "go-grpc-boilerplate/proto/auth"
 )
 
-func (s *AuthServer) Login(ctx context.Context, in *authpb.LoginRequest) (*authpb.TokenResponse, error) {
+func (s *AuthHandler) Login(ctx context.Context, in *authpb.LoginRequest) (*authpb.TokenResponse, error) {
 	req := login.InportRequest{
 		Email:    in.Email,
 		Password: in.Password,

@@ -32,7 +32,7 @@ func (h *Router) RegisterRouter() {
 	v1 := h.router.Group("/v1")
 
 	// PING
-	v1.GET("/health", healthcheck.HealthCheckHandler(h.container.HealthCheckInport))
+	v1.GET("/health", healthcheck.HealthCheck(h.container.HealthCheckInport))
 
 	// AUTH
 	authRouter := v1.Group("/auth")

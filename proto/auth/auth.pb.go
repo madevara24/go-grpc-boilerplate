@@ -201,10 +201,10 @@ const file_proto_auth_auth_proto_rawDesc = "" +
 	"\n" +
 	"expires_in\x18\x03 \x01(\x03R\texpiresIn\x12\x1d\n" +
 	"\n" +
-	"token_type\x18\x04 \x01(\tR\ttokenType2z\n" +
-	"\vAuthService\x120\n" +
-	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.TokenResponse\x129\n" +
-	"\fRefreshToken\x12\x14.auth.RefreshRequest\x1a\x13.auth.TokenResponseB6Z4github.com/madevara24/go-grpc-boilerplate/proto/authb\x06proto3"
+	"token_type\x18\x04 \x01(\tR\ttokenType2u\n" +
+	"\vAuthHandler\x120\n" +
+	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.TokenResponse\x124\n" +
+	"\aRefresh\x12\x14.auth.RefreshRequest\x1a\x13.auth.TokenResponseB6Z4github.com/madevara24/go-grpc-boilerplate/proto/authb\x06proto3"
 
 var (
 	file_proto_auth_auth_proto_rawDescOnce sync.Once
@@ -225,10 +225,10 @@ var file_proto_auth_auth_proto_goTypes = []any{
 	(*TokenResponse)(nil),  // 2: auth.TokenResponse
 }
 var file_proto_auth_auth_proto_depIdxs = []int32{
-	0, // 0: auth.AuthService.Login:input_type -> auth.LoginRequest
-	1, // 1: auth.AuthService.RefreshToken:input_type -> auth.RefreshRequest
-	2, // 2: auth.AuthService.Login:output_type -> auth.TokenResponse
-	2, // 3: auth.AuthService.RefreshToken:output_type -> auth.TokenResponse
+	0, // 0: auth.AuthHandler.Login:input_type -> auth.LoginRequest
+	1, // 1: auth.AuthHandler.Refresh:input_type -> auth.RefreshRequest
+	2, // 2: auth.AuthHandler.Login:output_type -> auth.TokenResponse
+	2, // 3: auth.AuthHandler.Refresh:output_type -> auth.TokenResponse
 	2, // [2:4] is the sub-list for method output_type
 	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

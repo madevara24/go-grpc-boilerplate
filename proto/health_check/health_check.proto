@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package health_check;
+
+option go_package = "github.com/madevara24/go-grpc-boilerplate/proto/health_check";
+
+service HealthCheckHandler {
+    rpc HealthCheck(HealthRequest) returns (HealthResponse);
+}
+
+message HealthRequest {}
+
+message HealthResponse {
+    string massage = 1;
+    string status = 2;
+    string name = 3;
+    string version = 4;
+}
+

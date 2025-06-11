@@ -4,9 +4,9 @@ package auth;
 
 option go_package = "github.com/madevara24/go-grpc-boilerplate/proto/auth";
 
-service AuthService {
+service AuthHandler {
     rpc Login(LoginRequest) returns (TokenResponse);
-    rpc RefreshToken(RefreshRequest) returns (TokenResponse);
+    rpc Refresh(RefreshRequest) returns (TokenResponse);
 }
 
 message LoginRequest {
