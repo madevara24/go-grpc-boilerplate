@@ -1,6 +1,7 @@
 package grpc
 
 import (
+	"context"
 	"go-grpc-boilerplate/internal/app"
 	"go-grpc-boilerplate/internal/app/delivery/grpc/auth"
 	"go-grpc-boilerplate/internal/app/delivery/grpc/health_check"
@@ -11,14 +12,16 @@ import (
 )
 
 type Handler struct {
+	context    context.Context // NOTE: For middlewares
 	GrpcServer *grpc.Server
 
 	AuthServer   *auth.AuthHandler
 	HealthServer *health_check.HealthCheckHandler
 }
 
-func NewHandler(server *grpc.Server, container *app.Container) *Handler {
+func NewHandler(ctx context.Context, server *grpc.Server, container *app.Container) *Handler {
 	return &Handler{
+		context:      ctx,
 		GrpcServer:   server,
 		AuthServer:   auth.NewAuthHandler(container),
 		HealthServer: health_check.NewHealthCheckHandler(container),

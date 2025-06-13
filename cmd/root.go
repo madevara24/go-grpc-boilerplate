@@ -23,6 +23,7 @@ func init() {
 	rootCmd.AddCommand(migrateDownCmd)
 	rootCmd.AddCommand(migrateUpCmd)
 	rootCmd.AddCommand(migrateStatusCmd)
+	rootCmd.AddCommand(grpcCmd)
 
 	err := godotenv.Load()
 	if err != nil {

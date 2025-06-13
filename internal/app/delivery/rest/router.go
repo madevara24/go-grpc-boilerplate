@@ -7,22 +7,21 @@ import (
 	"go-grpc-boilerplate/internal/app/delivery/rest/healthcheck"
 	"go-grpc-boilerplate/internal/app/delivery/rest/middleware"
 	"go-grpc-boilerplate/internal/app/delivery/rest/user"
-	"go-grpc-boilerplate/internal/pkg/datasource"
 
 	"github.com/gin-gonic/gin"
 )
 
 type Router struct {
-	router     *gin.Engine
-	datasource *datasource.DataSource
-	container  *app.Container
+	context   context.Context // NOTE: For middlewares
+	router    *gin.Engine
+	container *app.Container
 }
 
-func NewRouter(ctx context.Context, router *gin.Engine, datasource *datasource.DataSource, container *app.Container) *Router {
+func NewRouter(ctx context.Context, router *gin.Engine, container *app.Container) *Router {
 	return &Router{
-		router:     router,
-		datasource: datasource,
-		container:  container,
+		context:   ctx,
+		router:    router,
+		container: container,
 	}
 }
 
